@@ -1,12 +1,9 @@
-runtime: python39  # Using Python 3.9 runtime
-entrypoint: python3 -m http.server 8080
-
+runtime: python39  # or nodejs if you are using Node.js
 handlers:
 - url: /
-  static_files: WAD1/index.html  # Specify the correct path
-  upload: WAD1/index.html
+  static_files: index.html
+  upload: index.html
 
 - url: /(.*)
-  static_files: WAD1/\1
-  upload: WAD1/(.*)
-
+  static_files: \1
+  upload: .*
